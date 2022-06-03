@@ -75,7 +75,7 @@ require("packer").startup(function(use)
 	--    config = [[require('configs.neoscroll')]]
 	--  })
 
-	use({ "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] })
+	use({ "gelguy/wilder.nvim", config = [[require('configs.wilder')]] })
 
 	use({
 		"EdenEast/nightfox.nvim",
@@ -124,20 +124,20 @@ require("packer").startup(function(use)
 	-- 	config = [[require("configs.neo-tree")]],
 	-- })
 
-  use({
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      },
-      tag = 'nightly', -- optional, updated every week. (see issue #1193)
-      config = [[require('configs.nvim-tree')]]
-  })
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icon
+		},
+		tag = "nightly", -- optional, updated every week. (see issue #1193)
+		config = [[require('configs.nvim-tree')]],
+	})
 
 	use({ "voldikss/vim-floaterm" })
 
-  use({
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = [[require('configs.lualine')]]
-  })
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", 'arkav/lualine-lsp-progress' },
+		config = [[require('configs.lualine')]],
+	})
 end)
