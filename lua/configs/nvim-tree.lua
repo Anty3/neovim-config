@@ -110,4 +110,3 @@ require("nvim-tree").setup({
 	},
 })
 
-vim.cmd('highlight NvimTreeFolderIcon guibg=blue')
