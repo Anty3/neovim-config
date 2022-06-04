@@ -82,6 +82,7 @@ map("n", "<leader>;", "<C-6>")
 map("n", "<M-w>", ":Bdelete<CR>")
 
 -- Floaterm
-map("n", "<F12>", ":FloatermToggle<CR>")
-map("t", "<F12>", "<C-\\><C-n>:FloatermToggle<CR>")
+-- map("n", "<F12>", ":FloatermToggle<CR>")
+-- map("t", "<F12>", "<C-\\><C-n>:FloatermToggle<CR>")
+
 

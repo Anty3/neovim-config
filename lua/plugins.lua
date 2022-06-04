@@ -139,11 +139,17 @@ require("packer").startup(function(use)
 		config = [[require('configs.nvim-tree')]],
 	})
 
-	use({ "voldikss/vim-floaterm" })
+	-- use({ "voldikss/vim-floaterm" })
 
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", "arkav/lualine-lsp-progress" },
 		config = [[require('configs.lualine')]],
+	})
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "v1.*",
+		config = [[require('configs.toggleterm')]]
 	})
 end)
