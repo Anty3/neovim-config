@@ -59,7 +59,13 @@ require("packer").startup(function(use)
 	use({
 		"nvim-telescope/telescope.nvim",
 		cmd = "Telescope",
-		requires = { { "nvim-lua/plenary.nvim" } },
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				run = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+			},
+		},
 		config = [[require('configs.telescope')]],
 	})
 
@@ -137,7 +143,7 @@ require("packer").startup(function(use)
 
 	use({
 		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", 'arkav/lualine-lsp-progress' },
+		requires = { "kyazdani42/nvim-web-devicons", "arkav/lualine-lsp-progress" },
 		config = [[require('configs.lualine')]],
 	})
 end)
