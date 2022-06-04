@@ -27,13 +27,13 @@ local custom_attach = function(client, bufnr)
 
 	local opts = { silent = true, buffer = bufnr }
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-	vim.keymap.set("n", "gs", function()
+	vim.keymap.set("n", "gv", function()
 		vim.cmd("vsplit")
 		vim.lsp.buf.definition()
 	end, opts)
 
 	vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-	vim.keymap.set("n", "gs", function()
+	vim.keymap.set("n", "gV", function()
 		vim.cmd("vsplit")
 		vim.lsp.buf.declaration()
 	end, opts)
